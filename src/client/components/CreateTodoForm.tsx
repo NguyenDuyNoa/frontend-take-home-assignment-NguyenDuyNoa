@@ -68,7 +68,7 @@ export const CreateTodoForm = () => {
       <button
         type="submit"
         disabled={isCreatingTodo}
-        className="h-9 w-[68px] rounded-full bg-gray-700 text-sm font-semibold text-white transition-colors hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:opacity-50"
+        className="rounded-full bg-gray-700 px-5 py-2 text-sm font-bold text-white transition-colors hover:bg-gray-600 disabled:opacity-50"
       >
         Add
       </button>

@@ -39,19 +39,19 @@ const Index = () => {
             <Tabs.List className="rounded-lg flex gap-2 space-x-1 p-1">
               <Tabs.Trigger
                 value="all"
-                className="rounded-full border border-gray-700 px-6 py-3 text-sm font-medium leading-5 text-gray-700 ring-gray-700 data-[state=active]:bg-gray-700 data-[state=active]:text-white"
+                className="rounded-full border border-gray-200 px-6 py-3 text-center text-sm font-bold text-gray-700 ring-gray-700 data-[state=active]:bg-gray-700 data-[state=active]:text-white"
               >
                 All
               </Tabs.Trigger>
               <Tabs.Trigger
                 value="pending"
-                className="rounded-full border border-gray-700 px-6  py-3 text-sm font-medium leading-5 text-gray-700 ring-gray-700 data-[state=active]:bg-gray-700 data-[state=active]:text-white"
+                className="rounded-full border border-gray-200 px-6 py-3  text-center text-sm font-bold text-gray-700 ring-gray-700 data-[state=active]:bg-gray-700 data-[state=active]:text-white"
               >
                 Pending
               </Tabs.Trigger>
               <Tabs.Trigger
                 value="completed"
-                className="rounded-full border border-gray-700 px-6  py-3 text-sm font-medium leading-5 text-gray-700 ring-gray-700 data-[state=active]:bg-gray-700 data-[state=active]:text-white"
+                className="rounded-full border border-gray-200 px-6 py-3  text-center text-sm font-bold text-gray-700 ring-gray-700 data-[state=active]:bg-gray-700 data-[state=active]:text-white"
               >
                 Completed
               </Tabs.Trigger>

@@ -2,7 +2,6 @@ import type { SVGProps, FC } from 'react'
 
 import * as Checkbox from '@radix-ui/react-checkbox'
 import { useAutoAnimate } from '@formkit/auto-animate/react'
-// import { date } from 'zod'
 
 import { api } from '@/utils/client/api'
 
@@ -65,18 +64,6 @@ import { api } from '@/utils/client/api'
  *  - https://auto-animate.formkit.com
  */
 
-interface Todo {
-  id: number
-  body: string
-  status: 'pending' | 'completed'
-}
-
-const mockTodos: Todo[] = [
-  { id: 1, body: 'Learn React', status: 'pending' },
-  { id: 2, body: 'Learn TypeScript', status: 'completed' },
-  { id: 3, body: 'Build a Todo App', status: 'pending' },
-]
-
 interface TodoListProps {
   filter: 'all' | 'pending' | 'completed'
 }
@@ -84,11 +71,9 @@ interface TodoListProps {
 export const TodoList: FC<TodoListProps> = ({ filter }) => {
   const [parent] = useAutoAnimate()
 
-  // const { data: todos = [], refetch } = api.todo.getAll.useQuery({
-  //   statuses: ['completed', 'pending'],
-  // })
-
-  const todos = mockTodos
+  const { data: todos = [], refetch } = api.todo.getAll.useQuery({
+    statuses: ['completed', 'pending'],
+  })
 
   const filteredTodos = todos.filter((todo) => {
     if (filter === 'all') {
@@ -105,13 +90,13 @@ export const TodoList: FC<TodoListProps> = ({ filter }) => {
 
   const updateTodoStatus = api.todoStatus.update.useMutation({
     onSuccess: () => {
-      // refetch()
+      refetch()
     },
   })
 
   const deleteTodo = api.todo.delete.useMutation({
     onSuccess: () => {
-      // refetch()
+      refetch()
     },
   })
 
